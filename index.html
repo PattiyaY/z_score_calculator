@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z-score calculator</title>
+  </head>
+
+  <body>
+    <h1>Z-score calculator</h1>
+    <p>Use this calculator to compute the z-score of a normal distribution.</p>
+    <form id="calculator_raw_score">
+      <div>
+        <label>Raw Score</label>
+        <input id="raw_score" type="text" />
+        <br />
+        <label>Population Mean</label>
+        <input id="population_mean" type="text" />
+        <br />
+        <label>Standard Deviation</label>
+        <input id="standard_deviation" type="text" />
+      </div>
+      <div>
+        <button type="submit">Calculate</button>
+        <button>Clear</button>
+      </div>
+    </form>
+    <script src="./node_modules/jstat/dist/jstat.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
