@@ -1,0 +1,12 @@
+hr {
+  width: 30px;
+  text-align: left;
+  margin-left: 64px;
+  margin-top: 0px;
+}
+
+#standard_deviation_symbol {
+  margin-left: 75px;
+  margin-top: -7px;
+  margin-bottom: 0px;
+}
