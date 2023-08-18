@@ -28,24 +28,24 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
 
 
   // Step
-  //container ZScore and formula
+  // container Z-score and formula
   let divContainer = document.createElement("div");
   divContainer.setAttribute("id", "container");
   document.body.appendChild(divContainer);
   
-  //Zscore
+  // Z-score
   let divWrapForZScore = document.createElement("div");
   divWrapForZScore.setAttribute("id", "z_score");
+  divContainer.appendChild(divWrapForZScore);
 
   let spanForZScore = document.createElement("span");
   spanForZScore.innerHTML = 'Z score = ';
-
   divWrapForZScore.appendChild(spanForZScore);
-  divContainer.appendChild(divWrapForZScore);
 
-  //Formula
+  // Formula
   let divWrapForZScoreFormula = document.createElement("div");
   divWrapForZScoreFormula.setAttribute("id", "z_score_formula");
+  divContainer.appendChild(divWrapForZScoreFormula);
   
   let rawAndMean = document.createElement("p");
   rawAndMean.setAttribute("id", "raw_And_mean");
@@ -55,10 +55,9 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
   let standardDeviationSymbol = document.createElement("p");
   standardDeviationSymbol.setAttribute("id", "standard_deviation_symbol");
   standardDeviationSymbol.innerHTML = standardDeviation;
-  divWrapForZScoreFormula.appendChild(standardDeviation)
-  
-  divContainer.appendChild(divWrapForZScoreFormula);
-  //divide line
+  divWrapForZScoreFormula.appendChild(standardDeviationSymbol)
+
+  // divide line
   let line = document.createElement("hr");
   divWrapForZScoreFormula.appendChild(line);
   divWrapForZScoreFormula.appendChild(standardDeviationSymbol);
