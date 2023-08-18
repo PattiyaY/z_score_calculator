@@ -26,7 +26,17 @@
         <button>Clear</button>
       </div>
     </form>
-    <script src="./node_modules/jstat/dist/jstat.min.js"></script>
-    <script src="index.js"></script>
+    <p><strong>Results:</strong></p>
+    <p id="z_score"></p>
+    <p id="probability_x_lesser_than_raw_score"></p>
+    <p id="probability_x_greater_than_raw_score"></p>
+    <p id="probability_at_x"></p>
+    <p><strong>Steps:</strong></p>
+    <div id="z_score_formula">
+      <span>Z score = x - μ</span>
+      <hr />
+      <p id="standard_deviation_symbol">σ</p>
+    </div>
+    <script src="dist/bundle.js"></script>
   </body>
 </html>
