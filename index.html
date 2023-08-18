@@ -26,17 +26,26 @@
         <button>Clear</button>
       </div>
     </form>
+
     <p><strong>Results:</strong></p>
     <p id="z_score"></p>
     <p id="probability_x_lesser_than_raw_score"></p>
     <p id="probability_x_greater_than_raw_score"></p>
     <p id="probability_at_x"></p>
+
     <p><strong>Steps:</strong></p>
-    <div id="z_score_formula">
-      <span>Z score = x - μ</span>
-      <hr />
-      <p id="standard_deviation_symbol">σ</p>
+    <div id="container">
+      <div id="z_score">
+        <span>Z score = </span>
+      </div>
+
+      <div id="z_score_formula">
+        <p id="raw_And_mean">x - μ</p>
+        <hr/>
+        <p id="standard_deviation_symbol">σ</p>
+      </div>
     </div>
     <script src="dist/bundle.js"></script>
+
   </body>
 </html>

@@ -26,22 +26,40 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
     "probability_at_x",
   ).innerHTML = `Probability of ${populationMean} < x < ${rawScore} : ${probabilityAtX}`;
 
+
   // Step
+  //container ZScore and formula
+  let divContainer = document.createElement("div");
+  divContainer.setAttribute("id", "container");
+  document.body.appendChild(divContainer);
+  
+  //Zscore
+  let divWrapForZScore = document.createElement("div");
+  divWrapForZScore.setAttribute("id", "z_score");
+
+  let spanForZScore = document.createElement("span");
+  spanForZScore.innerHTML = 'Z score = ';
+
+  divWrapForZScore.appendChild(spanForZScore);
+  divContainer.appendChild(divWrapForZScore);
+
+  //Formula
   let divWrapForZScoreFormula = document.createElement("div");
   divWrapForZScoreFormula.setAttribute("id", "z_score_formula");
-  document.body.appendChild(divWrapForZScoreFormula);
-
-  let spanForZScoreForumula = document.createElement("span");
-  spanForZScoreForumula.innerHTML = `Z score = ${rawScore} - ${populationMean}`;
-
-  divWrapForZScoreFormula.appendChild(spanForZScoreForumula);
+  
+  let rawAndMean = document.createElement("p");
+  rawAndMean.setAttribute("id", "raw_And_mean");
+  rawAndMean.innerHTML = `${rawScore} - ${populationMean}`;
+  divWrapForZScoreFormula.appendChild(rawAndMean);
 
   let standardDeviationSymbol = document.createElement("p");
   standardDeviationSymbol.setAttribute("id", "standard_deviation_symbol");
   standardDeviationSymbol.innerHTML = standardDeviation;
-
+  divWrapForZScoreFormula.appendChild(standardDeviation)
+  
+  divContainer.appendChild(divWrapForZScoreFormula);
+  //divide line
   let line = document.createElement("hr");
-
   divWrapForZScoreFormula.appendChild(line);
   divWrapForZScoreFormula.appendChild(standardDeviationSymbol);
 });

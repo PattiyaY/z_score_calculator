@@ -1,12 +1,31 @@
+#container{
+  display: flex;
+  flex-direction: row;
+}
+
+#z_score_formula{
+  width: fit-content;
+  margin-left: 10px;
+}
+
+#raw_And_mean{
+  margin-top: -15px;
+  margin-bottom: 0px;
+}
+
 hr {
-  width: 30px;
-  text-align: left;
-  margin-left: 64px;
-  margin-top: 0px;
+  width: 100%;
+  text-align: center;
+  /*margin-left: 64px;
+  margin-top: 0px;*/
 }
 
 #standard_deviation_symbol {
-  margin-left: 75px;
+  /*margin-left: 75px;
   margin-top: -7px;
-  margin-bottom: 0px;
+  margin-bottom: 0px;*/
+  margin-top: -7px;
+  text-align: center;
 }
+
+
