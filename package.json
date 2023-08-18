@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --mode development --watch"
+    "start": "webpack-dev-server --mode development"
   },
   "dependencies": {
     "http-server": "^14.1.1",
