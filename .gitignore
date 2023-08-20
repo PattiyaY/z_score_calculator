@@ -1,3 +1,4 @@
 node_modules/
 .vimrc
-bundle.js
+dist/
+figma_design/
