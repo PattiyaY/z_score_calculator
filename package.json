@@ -1,6 +1,14 @@
 {
+  "name": "Z score Calculator",
+  "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/janpoonthong/z_score_calculator.git"
+  },
   "scripts": {
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode=development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "http-server": "^14.1.1",
