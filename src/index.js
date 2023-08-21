@@ -1,7 +1,7 @@
 import jstat from "jstat";
 
 let calculatorRawScoreForm = document.getElementById("calculator_raw_score");
-
+let KeepCalculatedValue = [];
 function countLeadingZeros(number) {
   return number.toExponential().split("-")[1];
 }
@@ -37,13 +37,13 @@ function displayResult(
   populationMean,
   rawScore,
   probabilityXGreaterThanRawScore,
-  probabilityXLesserThanRawScore,
+  probabilityXLessThanRawScore,
   probabilityAtX,
 ) {
   document.getElementById("z_score").innerHTML = `Z Score: ${zScore}`;
   document.getElementById(
     "probability_x_lesser_than_raw_score",
-  ).innerHTML = `Probability of x < ${rawScore}: ${probabilityXLesserThanRawScore}`;
+  ).innerHTML = `Probability of x < ${rawScore}: ${probabilityXLessThanRawScore}`;
   document.getElementById(
     "probability_x_greater_than_raw_score",
   ).innerHTML = `Probability of x > ${rawScore}: ${probabilityXGreaterThanRawScore}`;
@@ -64,18 +64,21 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
 
   // Probability calculation
   let probabilityXGreaterThanRawScore = probability;
-  let probabilityXLesserThanRawScore = 1 - probabilityXGreaterThanRawScore;
+  let probabilityXLessThanRawScore = 1 - probabilityXGreaterThanRawScore;
   let probabilityAtX =
-    Math.round((probabilityXLesserThanRawScore - 0.5) * 100000) / 100000;
+    Math.round((probabilityXLessThanRawScore - 0.5) * 100000) / 100000;
   displayResult(
     zScore,
     populationMean,
     rawScore,
     probabilityXGreaterThanRawScore,
-    probabilityXLesserThanRawScore,
+    probabilityXLessThanRawScore,
     probabilityAtX,
   );
-
+  
+  displayResult()
+  KeepCalculatedValue.push([rawScore,]);
+   
 });
 
 function displaySteps(){
@@ -113,5 +116,6 @@ function displaySteps(){
   let line = document.createElement("hr");
   divWrapForZScoreFormula.appendChild(line);
   divWrapForZScoreFormula.appendChild(standardDeviationSymbol);
+
 }
   
