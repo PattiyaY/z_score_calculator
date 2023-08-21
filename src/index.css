@@ -1,14 +1,14 @@
-#container{
+#container {
   display: flex;
   flex-direction: row;
 }
 
-#z_score_formula{
+#z_score_formula {
   width: fit-content;
   margin-left: 10px;
 }
 
-#raw_And_mean{
+#raw_And_mean {
   margin-top: -15px;
   margin-bottom: 0px;
 }
@@ -27,5 +27,3 @@ hr {
   margin-top: -7px;
   text-align: center;
 }
-
-
