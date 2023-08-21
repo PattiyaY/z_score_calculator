@@ -78,14 +78,14 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
 
   // Step
   // container Z-score and formula
-  let divContainer = document.createElement("div");
-  divContainer.setAttribute("id", "formula_container");
-  document.body.appendChild(divContainer);
+  let divFormulaContainer = document.createElement("div");
+  divFormulaContainer.setAttribute("id", "formula_container");
+  document.body.appendChild(divFormulaContainer);
 
   // Z-score
   let divWrapForZScore = document.createElement("div");
   divWrapForZScore.setAttribute("id", "z_score");
-  divContainer.appendChild(divWrapForZScore);
+  divFormulaContainer.appendChild(divWrapForZScore);
 
   let spanForZScore = document.createElement("span");
   spanForZScore.innerHTML = "Z score = ";
@@ -94,12 +94,12 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
   // Formula
   let divWrapForZScoreFormula = document.createElement("div");
   divWrapForZScoreFormula.setAttribute("id", "z_score_formula");
-  divContainer.appendChild(divWrapForZScoreFormula);
+  divFormulaContainer.appendChild(divWrapForZScoreFormula);
 
-  let rawAndMean = document.createElement("p");
-  rawAndMean.setAttribute("id", "raw_And_mean");
-  rawAndMean.innerHTML = `${rawScore} - ${populationMean}`;
-  divWrapForZScoreFormula.appendChild(rawAndMean);
+  let rawMinusPopulationMean = document.createElement("p");
+  rawMinusPopulationMean.setAttribute("id", "raw_and_population_mean");
+  rawMinusPopulationMean.innerHTML = `${rawScore} - ${populationMean}`;
+  divWrapForZScoreFormula.appendChild(rawMinusPopulationMean);
 
   let standardDeviationSymbol = document.createElement("p");
   standardDeviationSymbol.setAttribute("id", "standard_deviation_symbol");
