@@ -79,7 +79,7 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
   // Step
   // container Z-score and formula
   let divContainer = document.createElement("div");
-  divContainer.setAttribute("id", "container");
+  divContainer.setAttribute("id", "formula_container");
   document.body.appendChild(divContainer);
 
   // Z-score

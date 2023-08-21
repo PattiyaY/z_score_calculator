@@ -1,29 +1,19 @@
-#container {
+#formula_container {
   display: flex;
   flex-direction: row;
+  padding: 20px;
 }
 
 #z_score_formula {
-  width: fit-content;
   margin-left: 10px;
+  margin-top: -35px;
 }
 
 #raw_And_mean {
-  margin-top: -15px;
   margin-bottom: 0px;
 }
 
-hr {
-  width: 100%;
-  text-align: center;
-  /*margin-left: 64px;
-  margin-top: 0px;*/
-}
-
 #standard_deviation_symbol {
-  /*margin-left: 75px;
-  margin-top: -7px;
-  margin-bottom: 0px;*/
-  margin-top: -7px;
+  margin-top: 0px;
   text-align: center;
 }
