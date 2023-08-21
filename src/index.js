@@ -76,6 +76,9 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
     probabilityAtX,
   );
 
+});
+
+function displaySteps(){
   // Step
   // container Z-score and formula
   let divFormulaContainer = document.createElement("div");
@@ -110,4 +113,5 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
   let line = document.createElement("hr");
   divWrapForZScoreFormula.appendChild(line);
   divWrapForZScoreFormula.appendChild(standardDeviationSymbol);
-});
+}
+  
