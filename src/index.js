@@ -1,7 +1,7 @@
 import jstat from "jstat";
 
 let calculatorRawScoreForm = document.getElementById("calculator_raw_score");
-let KeepCalculatedValue = [];
+
 function countLeadingZeros(number) {
   return number.toExponential().split("-")[1];
 }
@@ -76,12 +76,11 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
     probabilityAtX,
   );
   
-  displayResult()
-  KeepCalculatedValue.push([rawScore,]);
-   
+  displaySteps(rawScore, populationMean, standardDeviation);
+
 });
 
-function displaySteps(){
+function displaySteps(rawScore, populationMean, standardDeviation){
   // Step
   // container Z-score and formula
   let divFormulaContainer = document.createElement("div");
@@ -117,5 +116,10 @@ function displaySteps(){
   divWrapForZScoreFormula.appendChild(line);
   divWrapForZScoreFormula.appendChild(standardDeviationSymbol);
 
+}
+
+function deleteDivFormulaContainer(){
+  let div = document.getElementById("formula_container");
+  div.remove();
 }
   
