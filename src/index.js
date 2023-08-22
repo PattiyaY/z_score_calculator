@@ -1,6 +1,8 @@
 import jstat from "jstat";
 
 let calculatorRawScoreForm = document.getElementById("calculator_raw_score");
+let KeepFormulaAppearance = [];
+let oldDictValue = {} ;
 
 function countLeadingZeros(number) {
   return number.toExponential().split("-")[1];
@@ -76,7 +78,23 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
     probabilityAtX,
   );
   
-  displaySteps(rawScore, populationMean, standardDeviation);
+  let newDictValue = {
+    "rawScore": rawScore,
+    "populationMean": populationMean,
+    "standardDeviation": standardDeviation
+  };
+
+  if(objectsAreEqual(oldDictValue, newDictValue)){
+    return
+  } else if (Object.keys(oldDictValue).length === 0) {
+    displaySteps(rawScore, populationMean, standardDeviation);
+    oldDictValue = newDictValue;
+  } else if (oldDictValue != newDictValue) {
+    deleteDivFormulaContainer();
+    displaySteps(rawScore, populationMean, standardDeviation);
+    oldDictValue = newDictValue;
+    console.log("new one");
+  } 
 
 });
 
@@ -116,10 +134,28 @@ function displaySteps(rawScore, populationMean, standardDeviation){
   divWrapForZScoreFormula.appendChild(line);
   divWrapForZScoreFormula.appendChild(standardDeviationSymbol);
 
+  KeepFormulaAppearance.push(divFormulaContainer);
 }
 
 function deleteDivFormulaContainer(){
-  let div = document.getElementById("formula_container");
-  div.remove();
+  document.body.removeChild(KeepFormulaAppearance[0]);
 }
+
+function objectsAreEqual(objA, objB) {
+  const keysA = Object.keys(objA);
+  const keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  for (const key of keysA) {
+    if (objA[key] !== objB[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
   
