@@ -93,7 +93,6 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
     deleteDivFormulaContainer();
     displaySteps(rawScore, populationMean, standardDeviation);
     oldDictValue = newDictValue;
-    console.log("new one");
   } 
 
 });
