@@ -138,14 +138,21 @@ function displaySteps(rawScore, populationMean, standardDeviation, zScore){
   divWrapAnswerContainer.setAttribute("id", "AnswerContainer");
   document.body.appendChild(divWrapAnswerContainer);
 
-  //Answer Z-score
+  //Div Answer Z-score
   let divWrapForAnswerZscore = document.createElement("div");
   divWrapForAnswerZscore.setAttribute("id", "Z_score_Answer")
   divWrapAnswerContainer.appendChild(divWrapForAnswerZscore);
 
+  // = Sign
+  let equalSign = document.createElement("p");
+  equalSign.setAttribute("id", "equalSign");
+  equalSign.innerHTML = "=";
+  divWrapAnswerContainer.appendChild(equalSign);
+
+  //Z-score Answer
   let answerZscore = document.createElement("p");
   answerZscore.setAttribute("id", "Z_scoreAnswer");
-  answerZscore.innerHTML = ` =   ${zScore}`;
+  answerZscore.innerHTML = `${zScore}`;
   divWrapAnswerContainer.appendChild(answerZscore);
 
   KeepFormulaAppearance.push(divFormulaContainer);
