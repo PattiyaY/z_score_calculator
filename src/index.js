@@ -87,30 +87,30 @@ calculatorRawScoreForm.addEventListener("submit", (e) => {
   if(objectsAreEqual(oldDictValue, newDictValue)){
     return
   } else if (Object.keys(oldDictValue).length === 0) {
-    displaySteps(rawScore, populationMean, standardDeviation);
+    displaySteps(rawScore, populationMean, standardDeviation, zScore);
     oldDictValue = newDictValue;
   } else if (oldDictValue != newDictValue) {
     deleteDivFormulaContainer();
-    displaySteps(rawScore, populationMean, standardDeviation);
+    displaySteps(rawScore, populationMean, standardDeviation, zScore);
     oldDictValue = newDictValue;
   } 
 
 });
 
-function displaySteps(rawScore, populationMean, standardDeviation){
+function displaySteps(rawScore, populationMean, standardDeviation, zScore){
   // Step
-  // container Z-score and formula
+  // container Z-score and formula 1
   let divFormulaContainer = document.createElement("div");
   divFormulaContainer.setAttribute("id", "formula_container");
   document.body.appendChild(divFormulaContainer);
 
-  // Z-score
+  // Z-score 2
   let divWrapForZScore = document.createElement("div");
-  divWrapForZScore.setAttribute("id", "z_score");
+  divWrapForZScore.setAttribute("id", "Z_Score");
   divFormulaContainer.appendChild(divWrapForZScore);
 
   let spanForZScore = document.createElement("span");
-  spanForZScore.innerHTML = "Z score = ";
+  spanForZScore.innerHTML = " = ";
   divWrapForZScore.appendChild(spanForZScore);
 
   // Formula
@@ -133,13 +133,33 @@ function displaySteps(rawScore, populationMean, standardDeviation){
   divWrapForZScoreFormula.appendChild(line);
   divWrapForZScoreFormula.appendChild(standardDeviationSymbol);
 
+  //Answer container 3
+  let divWrapAnswerContainer = document.createElement("div");
+  divWrapAnswerContainer.setAttribute("id", "AnswerContainer");
+  document.body.appendChild(divWrapAnswerContainer);
+
+  //Answer Z-score
+  let divWrapForAnswerZscore = document.createElement("div");
+  divWrapForAnswerZscore.setAttribute("id", "Z_score_Answer")
+  divWrapAnswerContainer.appendChild(divWrapForAnswerZscore);
+
+  let answerZscore = document.createElement("p");
+  answerZscore.setAttribute("id", "Z_scoreAnswer");
+  answerZscore.innerHTML = ` =   ${zScore}`;
+  divWrapAnswerContainer.appendChild(answerZscore);
+
   KeepFormulaAppearance.push(divFormulaContainer);
+  KeepFormulaAppearance.push(divWrapAnswerContainer);
+
 }
 
+//delete div formula_container
 function deleteDivFormulaContainer(){
   document.body.removeChild(KeepFormulaAppearance[0]);
+  document.body.removeChild(KeepFormulaAppearance[1]);
 }
 
+//Check dictionary
 function objectsAreEqual(objA, objB) {
   const keysA = Object.keys(objA);
   const keysB = Object.keys(objB);
