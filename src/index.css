@@ -1,3 +1,7 @@
+body {
+  background-color: #3C493F;
+}
+
 #formula_container {
   display: flex;
   flex-direction: row;
@@ -31,3 +35,5 @@
   margin-left: 80px;
   margin-top: -33px;
 }
+
+
